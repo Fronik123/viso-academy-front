@@ -12,7 +12,7 @@ export default function CreateTimeEntrySection() {
   };
 
   return (
-    <div className="mb-12 flex justify-center" style={{ maxWidth: '700px', width: '100%' }}>
+    <div className="mb-12 flex justify-center">
       <TimeEntryForm
         onSubmit={handleSubmit}
         isSubmitting={isSubmitting}

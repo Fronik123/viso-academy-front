@@ -1,5 +1,5 @@
 
-import { CreateTimeEntry, TimeEntriesResponse, TimeEntry } from '@/types/timeEntry';
+import { CreateTimeEntry, TimeEntry, GroupedTimeEntriesResponse } from '@/types/timeEntry';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ;
 
@@ -20,7 +20,7 @@ export async function createTimeEntry(data: CreateTimeEntry): Promise<TimeEntry>
   return response.json();
 }
 
-export async function getTimeEntries(): Promise<TimeEntriesResponse> {
+export async function getTimeEntries(): Promise<GroupedTimeEntriesResponse> {
   const response = await fetch(`${API_BASE_URL}/time-entries`, {
     method: 'GET',
     headers: {
@@ -32,5 +32,5 @@ export async function getTimeEntries(): Promise<TimeEntriesResponse> {
     throw new Error('Failed to fetch time entries');
   }
 
-  return response.json();
+  return response.json() as Promise<GroupedTimeEntriesResponse>;
 }
