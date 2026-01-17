@@ -58,18 +58,23 @@ src/
    cd viso-academy-front
 ```
 
-2. **Install dependencies:**
+2. **Create a `.env.local` file** in the root directory:
+   ```env
+   NEXT_PUBLIC_API_URL=your backend API URL
+   ```   
+
+3. **Install dependencies:**
    ```bash
    npm install
    ```
 
-## ⚙️ Configuration
-
-1. **Create a `.env.local` file** in the root directory:
-   ```env
-   NEXT_PUBLIC_API_URL=your backend API URL
+3. **Run:**
+   ```bash
+   npm run dev
    ```
-   
-   
+
+
+
+
 
 
