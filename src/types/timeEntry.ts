@@ -15,7 +15,13 @@ export interface CreateTimeEntry {
   description: string;
 }
 
-export interface TimeEntriesResponse {
-  data: TimeEntry[];
-  total: number;
+export interface GroupedTimeEntry {
+  date: string;
+  entries: TimeEntry[];
+  totalHours: number;
+}
+
+export interface GroupedTimeEntriesResponse {
+  grandTotal: number;
+  grouped: GroupedTimeEntry[];
 }
