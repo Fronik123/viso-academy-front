@@ -52,7 +52,11 @@ src/
 
 ## 🛠️ Installation
 
-1. **Clone the repository** (if applicable) or navigate to the project directory
+1. Clone the repository:
+```bash
+   git clone <repository-url>
+   cd viso-academy-front
+```
 
 2. **Install dependencies:**
    ```bash
@@ -63,12 +67,9 @@ src/
 
 1. **Create a `.env.local` file** in the root directory:
    ```env
-   NEXT_PUBLIC_API_URL=http://localhost:3001
+   NEXT_PUBLIC_API_URL=your backend API URL
    ```
    
-   Replace `http://localhost:3001` with your backend API URL.
-
-2. **Update project list** (optional):
-   Edit `src/constants/projects.ts` to customize available projects.
+   
 
 
