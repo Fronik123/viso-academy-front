@@ -10,7 +10,7 @@ export default function Home() {
           <TimeEntryForm  />
       </div>
 
-      <main className={styles.main}>
+      {/* <main className={styles.main}>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -66,7 +66,7 @@ export default function Home() {
             Documentation
           </a>
         </div>
-      </main>
+      </main> */}
     </div>
   );
 }
