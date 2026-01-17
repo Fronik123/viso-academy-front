@@ -5,7 +5,6 @@
 - **Framework:** [Next.js 16](https://nextjs.org/) (App Router)
 - **Language:** TypeScript
 - **UI Library:** [Material-UI (MUI) v7](https://mui.com/)
-- **Styling:** Emotion (CSS-in-JS)
 - **React:** 19.2.3
 
 ## 📋 Features
