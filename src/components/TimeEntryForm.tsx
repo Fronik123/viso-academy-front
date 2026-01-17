@@ -15,21 +15,42 @@ import {
 import { CreateTimeEntry } from '@/types/timeEntry';
 import { PROJECTS } from '@/constanta/projects';
 
-export default function TimeEntryForm( ) {
+type TimeEntryFormProps = {
+  onSubmit: (data: CreateTimeEntry) => Promise<boolean>;
+  isSubmitting?: boolean;
+  error?: string | null;
+  success?: string | null;
+  onErrorClose?: () => void;
+  onSuccessClose?: () => void;
+}
+
+export default function TimeEntryForm({
+  onSubmit,
+  isSubmitting = false,
+  error = null,
+  success = null,
+  onErrorClose,
+  onSuccessClose,
+}: TimeEntryFormProps) {
   const [formData, setFormData] = useState<CreateTimeEntry>({
     date: new Date().toISOString().split('T')[0],
     project: PROJECTS[0],
     hours: 0,
     description: '',
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
-    setIsSubmitting(true);
-   
+    const isSuccess = await onSubmit(formData);
+    
+    if (isSuccess) {
+      setFormData({
+        date: new Date().toISOString().split('T')[0],
+        project: PROJECTS[0],
+        hours: 0,
+        description: '',
+      });
+    }
   };
 
 
@@ -88,8 +109,14 @@ export default function TimeEntryForm( ) {
             />
 
             {error && (
-              <Alert severity="error" onClose={() => setError(null)}>
+              <Alert severity="error" onClose={onErrorClose}>
                 {error}
+              </Alert>
+            )}
+
+            {success && (
+              <Alert severity="success" onClose={onSuccessClose}>
+                {success}
               </Alert>
             )}
 
