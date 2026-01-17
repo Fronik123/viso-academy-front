@@ -5,15 +5,15 @@ import {
   Box,
   Paper,
   Typography,
-  TextField,
   MenuItem,
-  Button,
   Alert,
   CircularProgress,
 } from '@mui/material';
 
 import { CreateTimeEntry } from '@/types/timeEntry';
 import { PROJECTS } from '@/constanta/projects';
+import CustomField from './ui/CustomField';
+import CustomButton from './ui/CustomButton';
 
 type TimeEntryFormProps = {
   onSubmit: (data: CreateTimeEntry) => Promise<boolean>;
@@ -55,15 +55,23 @@ export default function TimeEntryForm({
 
 
   return (
-    <Box sx={{ width: '100%', maxWidth: 672 }}>
-      <Paper elevation={1} sx={{ p: 3 }}>
-        <Typography variant="h5" component="h2" gutterBottom sx={{ mb: 3 }}>
+    <Box>
+      <Paper 
+        elevation={1} 
+        sx={{ 
+          p: 3, 
+          backgroundColor: '#18181b',
+          border: '1px solid #27272a',
+          borderRadius: '8px'
+        }}
+      >
+        <Typography variant="h5" component="h2" gutterBottom sx={{ mb: 3, color: '#fafafa' }}>
           Time Entry Form
         </Typography>
 
         <form onSubmit={handleSubmit}>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-            <TextField
+            <CustomField
               label="Date"
               type="date"
               required
@@ -72,7 +80,7 @@ export default function TimeEntryForm({
               fullWidth
             />
 
-            <TextField
+            <CustomField
               label="Project"
               select
               required
@@ -85,9 +93,9 @@ export default function TimeEntryForm({
                   {project}
                 </MenuItem>
               ))}
-            </TextField>
+            </CustomField>
 
-            <TextField
+            <CustomField
               label="Hours"
               type="number"
               required
@@ -98,7 +106,7 @@ export default function TimeEntryForm({
               fullWidth
             />
 
-            <TextField
+            <CustomField
               label="Work Description"
               multiline
               rows={4}
@@ -120,12 +128,11 @@ export default function TimeEntryForm({
               </Alert>
             )}
 
-            <Button
+            <CustomButton
               type="submit"
               variant="contained"
               disabled={isSubmitting}
               fullWidth
-              sx={{ mt: 1 }}
             >
               {isSubmitting ? (
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -135,7 +142,7 @@ export default function TimeEntryForm({
               ) : (
                 'Save'
               )}
-            </Button>
+            </CustomButton>
           </Box>
         </form>
       </Paper>
