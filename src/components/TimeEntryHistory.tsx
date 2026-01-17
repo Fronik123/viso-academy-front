@@ -27,7 +27,7 @@ export default async function TimeEntryHistory() {
   if (error) {
     return (
       <Paper sx={containerStyles}>
-        <Typography sx={{ color: '#f87171' }}>{error}</Typography>
+        <Typography sx={{ color: '#f87171', textAlign: 'center' }}>{'The list could not be loaded. Please try again later.'}</Typography>
       </Paper>
     );
   }
