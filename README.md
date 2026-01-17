@@ -23,6 +23,29 @@
   - Grand total across all entries
   - Server-side rendering for optimal performance
 
+## 🛠️ Installation
+
+1. Clone the repository:
+```bash
+   git clone <repository-url>
+   cd viso-academy-front
+```
+
+2. **Create a `.env.local` file** in the root directory:
+```env
+   NEXT_PUBLIC_API_URL=your backend API URL
+```   
+
+3. **Install dependencies:**
+```bash
+   npm install
+```
+
+4. **Run:**
+```bash
+   npm run dev
+```  
+
 ## 📁 Project Structure
 
 ```
@@ -50,28 +73,7 @@ src/
     └── timeEntry.ts       
 ```
 
-## 🛠️ Installation
 
-1. Clone the repository:
-```bash
-   git clone <repository-url>
-   cd viso-academy-front
-```
-
-2. **Create a `.env.local` file** in the root directory:
-```env
-   NEXT_PUBLIC_API_URL=your backend API URL
-```   
-
-3. **Install dependencies:**
-```bash
-   npm install
-```
-
-4. **Run:**
-```bash
-   npm run dev
-```
 
 
 
