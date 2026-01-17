@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 
 import { CreateTimeEntry } from '@/types/timeEntry';
-import { PROJECTS } from '@/constanta/projects';
+import { PROJECTS } from '@/constants/projects';
 import CustomField from './ui/CustomField';
 import CustomButton from './ui/CustomButton';
 
