@@ -59,19 +59,19 @@ src/
 ```
 
 2. **Create a `.env.local` file** in the root directory:
-   ```env
+```env
    NEXT_PUBLIC_API_URL=your backend API URL
-   ```   
+```   
 
 3. **Install dependencies:**
-   ```bash
+```bash
    npm install
-   ```
+```
 
-3. **Run:**
-   ```bash
+4. **Run:**
+```bash
    npm run dev
-   ```
+```
 
 
 
